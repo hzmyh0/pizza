@@ -1,0 +1,53 @@
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-21 11:49:37
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-22 09:40:51
+hint
+help
+; feorij
+/*
+version
+project --topLevelPackage com.springsource.roo.pizzashop
+hint
+persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+hint
+entity --class ~.domain.Topping --testAutomatically 
+hint
+field string --fieldName name --notNull --sizeMin 2
+hint
+entity --class ~.domain.Base --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+entity --class ~.domain.Pizza --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName price --type java.lang.Float
+field set --fieldName toppings --type ~.domain.Topping
+field reference --fieldName base --type ~.domain.Base
+entity --class ~.domain.pizzaOrder --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+field string --fieldName address --sizeMax 30
+field number --fieldName total --type java.lang.Float
+field date --fieldName deliveryDate --type java.util.Date
+field set --fieldName pizzas --type ~.domain.Pizza
+perform tests
+perform tests
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-22 10:19:18
+web mvc setup
+web mvc all --package ~.web
+web mvc all --package ~.web
+exit
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-22 10:23:50
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-22 10:32:46
+hint
+security setup
+exit
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-22 10:34:39
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-22 10:45:11
+perform tests
+exit
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-22 10:45:50
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-22 10:48:46
+selenium test --controller ~.web.ToppingController
+selenium test --controller ~.web.BaseController
+selenium test --controller ~.web.PizzaController
+selenium test --controller ~.web.PizzaOrderController
+exit
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-22 10:49:54
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-22 19:13:28
